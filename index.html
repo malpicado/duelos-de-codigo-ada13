@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Duelos de Código</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Logos -->
+  <div id="logos">
+    <img src="Logo naranja ada13.png" alt="ADA13 Logo" id="ada13-logo">
+    <img src="logo-donweb-cloud-invertido.png" alt="Donweb Cloud Logo" id="donweb-logo">
+  </div>
+
+  <div id="homePage">
+    <h1 id="duelosDeCodigo">Duelos de Código</h1>
+    <button id="startRoundBtn">Iniciar Ronda</button>
+    <p id="currentRound">Ronda: 0</p>
+  </div>
+
+  <div id="duelPage" class="hidden">
+    <h1 id="headerDuelPage">Reto al que se enfrentan:</h1>
+    <h1 id="challengeTitle"></h1>
+    <p id="challengeDescription"></p>
+    <p id="timer">03:00</p>
+    <button id="startDuelBtn">Iniciar Duelo</button>
+    <button id="stopTimerBtn" class="hidden">Detener Contador</button>
+    <button id="duelist1Btn" class="hidden">Duelista 1</button>
+    <button id="duelist2Btn" class="hidden">Duelista 2</button>
+  </div>
+
+  <div id="roundSummaryPage" class="hidden">
+    <h1>Ronda <span id="roundSummary"></span> ha terminado</h1>
+    <button id="nextRoundBtn">Iniciar Siguiente Ronda</button>
+  </div>
+
+  <div id="endGamePage" class="hidden">
+    <h1>Los duelos de código han terminado</h1>
+    <button id="restartBtn">Reiniciar</button>
+  </div>
+
+  <!-- Leyenda del creador -->
+  <div id="creator-credit">
+    <p>Programado por</p>
+    <img src="LOGO-MALPICADO.png" alt="Logo de Malpicado" id="malpicado-logo">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

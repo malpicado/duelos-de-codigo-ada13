@@ -1,0 +1,100 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+/* Definición de variables de color */
+:root {
+  --color-fondo: #222623;
+  --color-titulo: #35ebdd;
+  --color-texto: white;
+  --color-contador: #F8EE1E;
+  --color-boton: #ff8000;
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color:var(--color-fondo);
+  color: var(--color-texto);
+  font-family: 'Roboto Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Estilos para títulos */
+h1 {
+  font-family: 'Apex Mk2', sans-serif;
+  color: var(--color-texto);
+}
+
+#duelosDeCodigo, #headerDuelPage{
+  color: var(--color-titulo);
+}
+
+
+/* Estilos para el contador */
+#timer {
+  font-family: 'Orbitron', sans-serif;
+  color:var(--color-contador);
+  font-size: 150px;
+  margin: 10px 0 10px 0;
+}
+
+/* Estilos para botones */
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: var(--color-boton);
+  color: var(--color-texto);
+}
+
+button:hover {
+  background-color: var(--color-texto);
+  color: var(--color-boton);
+}
+
+/* Transiciones entre pantallas */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Estilos para el layout responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Estilos para los logos */
+#logos img {
+  max-width: 100px;
+  margin: 10px;
+}
+
+/* Estilos para el crédito del creador */
+#creator-credit {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#creator-credit p {
+  margin: 0;
+  margin-right: 5px;
+}
+
+#creator-credit img {
+  max-width: 50px;
+}
