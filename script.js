@@ -46,12 +46,28 @@ const duelist2Btn = document.getElementById("duelist2Btn");
 const roundSummary = document.getElementById("roundSummary");
 const currentRoundElement = document.getElementById("currentRound");
 
+// Función para cargar el estado del juego desde localStorage
+function loadGameState() {
+  const savedGameState = localStorage.getItem('gameState');
+  if (savedGameState) {
+    const gameState = JSON.parse(savedGameState);
+    currentRound = gameState.currentRound;
+    gameState.challenges.forEach((challenge, index) => {
+      challenges[index].completed = challenge.completed;
+    });
+    currentRoundElement.textContent = `Ronda: ${currentRound}`;
+  }
+}
+
+// Cargar el estado del juego al inicio del script
+loadGameState();
 
 // Iniciar ronda
 document.getElementById("startRoundBtn").addEventListener("click", function() {
   currentRound++;
   currentRoundElement.textContent = `Ronda: ${currentRound}`;
   startNewRound();
+  saveGameState(); // Guardar estado del juego
 });
 
 // Iniciar duelo
@@ -78,6 +94,7 @@ document.getElementById("nextRoundBtn").addEventListener("click", function() {
     currentRound++;
     currentRoundElement.textContent = `Ronda: ${currentRound}`;
     startNewRound();
+    saveGameState(); // Guardar estado del juego
   } else {
     endGame();
   }
@@ -105,6 +122,7 @@ function startNewRound() {
   challengeTitle.textContent = randomChallenge.title;
   challengeDescription.textContent = randomChallenge.description;
   randomChallenge.completed = true;
+  saveGameState(); // Guardar estado del juego
 }
 
 function startTimer() {
@@ -158,7 +176,8 @@ function chooseWinner() {
   const chooseWinnerText = document.getElementById("chooseWinnerText");
   if (chooseWinnerText) {
     chooseWinnerText.remove();
-  }
+  };
+  saveGameState(); // Guardar estado del juego
 }
 
 function endGame() {
